@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Lab — Misi Menjadi AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== BACKGROUND FX ===== -->
+  <div class="fx-grid" aria-hidden="true"></div>
+  <div class="fx-glow" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">AI</div>
+      <div class="brand-text">
+        <h1>AI&nbsp;LAB</h1>
+        <p>Misi Menjadi AI Engineer</p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="xp-box" title="Total poin pengalaman">
+        <span class="xp-label">XP</span>
+        <span class="xp-value" id="xpValue">0</span>
+      </div>
+      <button class="btn-icon" id="btnReset" title="Reset semua progres">⟲</button>
+      <button class="btn-icon btn-menu" id="btnMenu" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar" id="navbar">
+    <button class="nav-btn active" data-page="mission">🎯 Mission Control</button>
+    <button class="nav-btn" data-page="background">📌 Latar Belakang</button>
+    <button class="nav-btn" data-page="competence">🎓 Kompetensi</button>
+    <button class="nav-btn" data-page="academy">📘 AI Academy</button>
+    <button class="nav-btn" data-page="lab">🧪 AI Training Lab</button>
+    <button class="nav-btn" data-page="arena">⚔️ Challenge Arena</button>
+    <button class="nav-btn" data-page="report">📊 Learning Report</button>
+    <button class="nav-btn" data-page="teacher">🛠️ Menu Guru</button>
+  </nav>
+
+  <!-- ===== GLOBAL PROGRESS ===== -->
+  <div class="global-progress">
+    <div class="gp-track"><div class="gp-fill" id="gpFill"></div></div>
+    <span class="gp-text" id="gpText">Progres misi: 0%</span>
+  </div>
+
+  <main id="app">
+
+    <!-- ================= MISSION CONTROL ================= -->
+    <section class="page active" id="page-mission">
+      <div class="hero card">
+        <div class="hero-copy">
+          <span class="badge">Unit Kompetensi · Kecerdasan Artifisial · Kelas X SMK</span>
+          <h2>Selamat datang di <span class="neon">Laboratorium AI</span></h2>
+          <p>
+            Kamu adalah calon <strong>AI Engineer</strong> magang di AI Lab. Selesaikan semua misi
+            berurutan untuk membuka seluruh sistem laboratorium dan meraih gelar
+            <strong>AI Engineer Muda</strong>.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-goto="academy">Mulai Misi 1 →</button>
+            <button class="btn btn-ghost" data-goto="report">Lihat Laporan</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="radar">
+            <div class="radar-sweep"></div>
+            <div class="radar-dot d1"></div>
+            <div class="radar-dot d2"></div>
+            <div class="radar-dot d3"></div>
+          </div>
+          <p class="radar-caption">Status sistem: <span class="ok">ONLINE</span></p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Daftar Misi</h3>
+      <div class="mission-grid" id="missionGrid"><!-- diisi JS --></div>
+
+      <div class="card tip-card">
+        <h4>🧭 Cara pakai lab ini</h4>
+        <ol class="tip-list">
+          <li>Pahami alasan dan tujuan belajarmu di <strong>Latar Belakang</strong> dan <strong>Kompetensi</strong>.</li>
+          <li>Baca materi di <strong>AI Academy</strong> sampai selesai.</li>
+          <li>Kunci jawaban dibuka setelah kamu menekan <em>“Materi Selesai”</em>.</li>
+          <li>Latih model AI nyata di <strong>AI Training Lab</strong> (Google Teachable Machine).</li>
+          <li>Uji pemahamanmu di <strong>Challenge Arena</strong> — ada skor dan pembahasan.</li>
+          <li>Pantau kemajuanmu di <strong>Learning Report</strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= LATAR BELAKANG ================= -->
+    <section class="page" id="page-background">
+      <h2 class="page-title">📌 Latar Belakang</h2>
+      <p class="page-sub">Mengapa AI Lab dibuat, masalah belajar apa yang ingin dijawab, dan bagaimana media ini membantumu.</p>
+
+      <h3 class="section-title">A. Masalah &amp; Tantangan Belajar</h3>
+
+      <div class="card ctx-card">
+        <span class="badge">Masalah nyata · Pemilahan sampah</span>
+        <h4>Sampah organik dan anorganik masih sering tercampur</h4>
+        <p>
+          Sisa makanan dan daun (<strong>organik</strong>) sering tercampur dengan botol plastik, kaleng, dan kaca
+          (<strong>anorganik</strong>) dalam satu tempat. Sampah yang tercampur lebih sulit diolah dan didaur ulang,
+          sedangkan memilah secara manual memakan waktu dan bergantung pada pengetahuan tiap orang.
+        </p>
+        <p>
+          Masalah ini dekat dengan kehidupan sehari-hari dan bisa dijawab dengan <strong>model AI pengenal gambar</strong>.
+          Karena itu, pemilah sampah otomatis dipilih sebagai proyek utama untuk belajar AI.
+        </p>
+      </div>
+
+      <h4 class="sub-label">Tantangan dalam belajar AI di kelas X</h4>
+      <div class="challenge-grid">
+        <div class="challenge-card">
+          <div class="ch-icon">🧩</div>
+          <h4>Konsep AI terasa abstrak</h4>
+          <p>Istilah seperti machine learning, supervised learning, epoch, dan overfitting sulit dibayangkan jika hanya dibaca.</p>
+          <span class="chip">Terkait: Misi 1 &amp; 3</span>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">💻</div>
+          <h4>AI dianggap harus lewat coding rumit</h4>
+          <p>Tidak semua siswa punya dasar pemrograman. Tanpa alat yang tepat, mereka berhenti sebelum sempat melatih model.</p>
+          <span class="chip">Terkait: AI Training Lab</span>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">📊</div>
+          <h4>Pentingnya data tidak terasa</h4>
+          <p>Jumlah, keberagaman, label, dan keseimbangan data sulit dipercaya menentukan mutu AI sebelum siswa mengalaminya sendiri.</p>
+          <span class="chip">Terkait: Misi 2</span>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">🌍</div>
+          <h4>Materi terasa jauh dari kehidupan</h4>
+          <p>Contoh AI sering berupa teknologi besar. Siswa lebih terlibat bila masalahnya dekat, seperti memilah sampah di sekolah.</p>
+          <span class="chip">Terkait: Misi 5</span>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">⚖️</div>
+          <h4>Etika dan bias sulit dipahami</h4>
+          <p>Bias, privasi, dan tanggung jawab mudah dianggap teori saja, sehingga hasil AI dikira selalu benar.</p>
+          <span class="chip">Terkait: Misi 4</span>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">🙋</div>
+          <h4>Belajar pasif dan sulit dipantau</h4>
+          <p>Dengan ceramah, guru sulit melihat pemahaman tiap siswa, dan siswa kurang mendapat umpan balik langsung.</p>
+          <span class="chip">Terkait: Arena &amp; Report</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">B. Solusi Media Pembelajaran Interaktif</h3>
+
+      <div class="card">
+        <span class="badge">Solusi · AI Lab</span>
+        <h4>Misi belajar bertingkat: baca → praktik → uji → refleksi</h4>
+        <p>
+          <strong>AI Lab</strong> adalah media pembelajaran interaktif berbasis web. Siswa menjalani misi berurutan,
+          melatih model AI sungguhan dengan <strong>Google Teachable Machine</strong>, lalu menguji pemahaman lewat kuis
+          dan memantau kemajuan sendiri. Media ini berjalan di browser tanpa instalasi dan tanpa server.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4>🔗 Tantangan dan jawabannya di AI Lab</h4>
+        <div class="table-wrap">
+          <table class="map-table">
+            <thead><tr><th>Tantangan</th><th>Solusi di AI Lab</th></tr></thead>
+            <tbody>
+              <tr><td>Konsep abstrak</td><td><strong>AI Academy</strong>: materi per misi dengan analogi dan kotak poin kunci.</td></tr>
+              <tr><td>Harus coding rumit</td><td><strong>AI Training Lab</strong>: melatih model lewat Teachable Machine, tanpa coding, langsung dari webcam.</td></tr>
+              <tr><td>Data tidak terasa penting</td><td>Siswa mengumpulkan sendiri data organik dan anorganik, lalu melihat model keliru bila data sedikit atau kurang beragam. Hasilnya dicatat di Log Latihan.</td></tr>
+              <tr><td>Jauh dari kehidupan</td><td>Proyek <strong>pemilah sampah otomatis</strong> (organik vs anorganik) sebagai kasus utama.</td></tr>
+              <tr><td>Etika dan bias</td><td>Misi 4 beserta pembahasan soal. Siswa menguji model dengan benda yang meragukan dan menemukan batas kemampuan AI.</td></tr>
+              <tr><td>Belajar pasif</td><td>Misi berurutan, XP, <strong>Challenge Arena</strong> dengan skor dan pembahasan, <strong>Learning Report</strong>, serta sertifikat digital. Guru mengelola isi lewat <strong>Menu Guru</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card flow-card">
+        <h4>♻️ Proyek utama: Pemilah Sampah Otomatis</h4>
+        <div class="flow">
+          <div class="flow-step"><span class="num">1</span><strong>Pahami masalah</strong><p>Sampah tercampur sulit diolah.</p></div>
+          <div class="flow-step"><span class="num">2</span><strong>Kumpulkan data</strong><p>Foto benda organik dan anorganik.</p></div>
+          <div class="flow-step"><span class="num">3</span><strong>Latih model</strong><p>Teachable Machine, dua kelas.</p></div>
+          <div class="flow-step"><span class="num">4</span><strong>Uji</strong><p>Arahkan benda baru ke kamera.</p></div>
+          <div class="flow-step"><span class="num">5</span><strong>Evaluasi</strong><p>Cek confidence, tambah data bila keliru.</p></div>
+        </div>
+        <div class="waste-classes">
+          <div class="waste organik"><strong>🍃 Kelas Organik</strong><span>daun, sisa makanan, kulit buah</span></div>
+          <div class="waste anorganik"><strong>🥫 Kelas Anorganik</strong><span>botol plastik, kaleng, kaca</span></div>
+        </div>
+      </div>
+
+      <h4 class="sub-label">Fitur yang menjawab tantangan</h4>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="ch-icon">📘</div><h4>AI Academy</h4><p>5 misi materi bertahap. Kuis terbuka setelah materi ditandai selesai.</p><button class="btn btn-ghost btn-sm" data-goto="academy">Buka →</button></div>
+        <div class="feature-card"><div class="ch-icon">🧪</div><h4>AI Training Lab</h4><p>Latih model gambar sendiri dan catat hasilnya di log.</p><button class="btn btn-ghost btn-sm" data-goto="lab">Buka →</button></div>
+        <div class="feature-card"><div class="ch-icon">⚔️</div><h4>Challenge Arena</h4><p>Kuis per misi dengan skor, pembahasan, dan bisa diulang.</p><button class="btn btn-ghost btn-sm" data-goto="arena">Buka →</button></div>
+        <div class="feature-card"><div class="ch-icon">📊</div><h4>Learning Report</h4><p>Rekap progres, status kelulusan, dan sertifikat digital.</p><button class="btn btn-ghost btn-sm" data-goto="report">Buka →</button></div>
+      </div>
+
+      <div class="page-next">
+        <button class="btn btn-primary" data-goto="competence">Lanjut ke Kompetensi →</button>
+      </div>
+    </section>
+
+    <!-- ================= KOMPETENSI ================= -->
+    <section class="page" id="page-competence">
+      <!-- Catatan guru: rumusan CP disusun dari isi materi AI Lab. Sesuaikan dengan dokumen CP resmi sekolah bila perlu. -->
+      <div class="cap-head">
+        <div class="cap-icon" aria-hidden="true">◎</div>
+        <div>
+          <h2 class="cap-title">Capaian &amp; Tujuan Pembelajaran</h2>
+          <p class="cap-sub">Koding dan Kecerdasan Artifisial · Fase E (Kelas 10)</p>
+        </div>
+      </div>
+
+      <div class="cap-panel cp-panel">
+        <div class="cap-label-row">
+          <span class="pill pill-blue">Capaian Pembelajaran (CP)</span>
+          <span class="label-text">Elemen: Literasi, Etika, serta Pemanfaatan dan Pengembangan Kecerdasan Artifisial</span>
+        </div>
+        <p>
+          Pada akhir fase E, murid mampu menjelaskan konsep dasar kecerdasan artifisial, memahami peran dan kualitas data,
+          serta membedakan cara AI belajar. Murid melatih dan mengevaluasi model pengenal gambar sederhana tanpa
+          pemrograman menggunakan Teachable Machine, menalar isu etika dan bias, serta menerapkan alur kerja AI untuk
+          menyelesaikan masalah nyata, seperti memilah sampah organik dan anorganik. Murid juga diharapkan mampu
+          mempertanggungjawabkan penggunaan AI secara jujur, rapi, dan bertanggung jawab.
+        </p>
+      </div>
+
+      <div class="cap-panel tp-panel">
+        <div class="cap-label-row">
+          <span class="pill pill-violet">Tujuan Pembelajaran (TP)</span>
+          <span class="label-text">Indikator Ketercapaian Pembelajaran</span>
+        </div>
+        <div class="tp2-grid">
+          <div class="tp2-card">
+            <h4 class="tone-1"><span class="tp2-num n-1">1</span>TP 1: DASAR KECERDASAN ARTIFISIAL</h4>
+            <ul class="tp2-list">
+              <li>Menjelaskan pengertian kecerdasan artifisial dan contohnya di kehidupan sehari-hari.</li>
+              <li>Membedakan AI, machine learning, dan deep learning.</li>
+              <li>Membedakan AI dengan program biasa yang aturannya ditulis manusia.</li>
+            </ul>
+          </div>
+          <div class="tp2-card">
+            <h4 class="tone-2"><span class="tp2-num n-2">2</span>TP 2: DATA SEBAGAI BAHAN BAKAR AI</h4>
+            <ul class="tp2-list">
+              <li>Mengelompokkan jenis data: gambar, teks, suara, dan angka.</li>
+              <li>Menjelaskan fungsi data latih dan data uji.</li>
+              <li>Menilai mutu data dari jumlah, keberagaman, label, dan keseimbangannya.</li>
+            </ul>
+          </div>
+          <div class="tp2-card">
+            <h4 class="tone-3"><span class="tp2-num n-3">3</span>TP 3: CARA AI BELAJAR</h4>
+            <ul class="tp2-list">
+              <li>Membedakan supervised, unsupervised, dan reinforcement learning beserta contohnya.</li>
+              <li>Memahami istilah epoch, akurasi, overfitting, dan generalisasi.</li>
+              <li>Mengenali tanda overfitting pada hasil pengujian model.</li>
+            </ul>
+          </div>
+          <div class="tp2-card">
+            <h4 class="tone-4"><span class="tp2-num n-4">4</span>TP 4: ETIKA &amp; BIAS AI</h4>
+            <ul class="tp2-list">
+              <li>Mengidentifikasi sumber bias pada data dan pelabelan.</li>
+              <li>Menjelaskan tanggung jawab AI Engineer: data secukupnya dan pengawasan manusia.</li>
+              <li>Menguji hasil model per kelompok agar adil, bukan hanya tinggi secara rata-rata.</li>
+            </ul>
+          </div>
+          <div class="tp2-card">
+            <h4 class="tone-5"><span class="tp2-num n-5">5</span>TP 5: ALUR KERJA AI ENGINEER</h4>
+            <ul class="tp2-list">
+              <li>Menyusun tujuh langkah alur kerja AI dari masalah sampai pemantauan.</li>
+              <li>Merancang rencana proyek: masalah, data, dan ukuran keberhasilan.</li>
+              <li>Mengenal profesi di bidang kecerdasan artifisial.</li>
+            </ul>
+          </div>
+          <div class="tp2-card">
+            <h4 class="tone-6"><span class="tp2-num n-6">6</span>TP 6: PRAKTIK TEACHABLE MACHINE</h4>
+            <ul class="tp2-list">
+              <li>Membuat proyek gambar dengan dua kelas: organik dan anorganik.</li>
+              <li>Mengumpulkan 30–50 gambar per kelas, lalu melatih dan menguji model dengan benda baru.</li>
+              <li>Mengevaluasi tingkat keyakinan (confidence) dan memperbaiki model dengan menambah data.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-next">
+        <button class="btn btn-primary" data-goto="academy">Mulai Misi 1 →</button>
+      </div>
+    </section>
+
+    <!-- ================= AI ACADEMY ================= -->
+    <section class="page" id="page-academy">
+      <h2 class="page-title">📘 AI Academy</h2>
+      <p class="page-sub">Baca materi, lalu tekan <strong>“Materi Selesai”</strong> untuk membuka kuisnya.</p>
+
+      <div class="module-list" id="moduleList"><!-- diisi JS --></div>
+    </section>
+
+    <!-- ================= AI TRAINING LAB ================= -->
+    <section class="page" id="page-lab">
+      <h2 class="page-title">🧪 AI Training Lab</h2>
+      <p class="page-sub">Di sini kamu melatih model AI sungguhan — langsung di browser, tanpa coding.</p>
+
+      <div class="card lab-card">
+        <div class="lab-head">
+          <span class="badge">Alat: Google Teachable Machine</span>
+          <h3>Latih model pertamamu</h3>
+        </div>
+        <div class="lab-steps">
+          <div class="lab-step"><span class="num">1</span><div><strong>Buat proyek</strong><p>Pilih <em>Image Project</em> → <em>Standard image model</em>.</p></div></div>
+          <div class="lab-step"><span class="num">2</span><div><strong>Siapkan 2 kelas</strong><p>Contoh: “Buku” dan “Botol”. Beri nama tiap kelas.</p></div></div>
+          <div class="lab-step"><span class="num">3</span><div><strong>Kumpulkan data</strong><p>Ambil 30–50 gambar per kelas lewat webcam atau unggah file.</p></div></div>
+          <div class="lab-step"><span class="num">4</span><div><strong>Latih & uji</strong><p>Tekan <em>Train Model</em>, lalu arahkan benda ke kamera.</p></div></div>
+          <div class="lab-step"><span class="num">5</span><div><strong>Evaluasi</strong><p>Cek tingkat keyakinan (confidence). Jika rendah, tambah data.</p></div></div>
+        </div>
+
+        <div class="lab-actions">
+          <a class="btn btn-primary" href="https://teachablemachine.withgoogle.com/train"
+             target="_blank" rel="noopener noreferrer" id="linkTM">
+            Buka Teachable Machine ↗
+          </a>
+          <button class="btn btn-ghost" id="btnCopyTM">Salin Alamat Situs</button>
+          <button class="btn btn-ghost" id="btnLabDone">Tandai Latihan Selesai</button>
+        </div>
+
+        <p class="link-fallback">
+          Tautan: <code id="tmUrl">https://teachablemachine.withgoogle.com/train</code>
+        </p>
+      </div>
+
+      <div class="card lab-log">
+        <h4>📝 Log Latihanmu</h4>
+        <div class="form-row">
+          <label for="labClass">Nama kelas yang kamu latih</label>
+          <input id="labClass" type="text" placeholder="Contoh: Buku, Botol, Pensil" maxlength="40" />
+        </div>
+        <div class="form-row">
+          <label for="labNotes">Catatan hasil (akurasi, kesalahan, dll.)</label>
+          <textarea id="labNotes" rows="3" placeholder="Contoh: Kelas Buku dikenali 9/10 kali; gagal saat cahaya redup." maxlength="300"></textarea>
+        </div>
+        <button class="btn btn-primary" id="btnSaveLog">Simpan Log</button>
+        <div class="log-output" id="logOutput"></div>
+      </div>
+    </section>
+
+    <!-- ================= CHALLENGE ARENA ================= -->
+    <section class="page" id="page-arena">
+      <h2 class="page-title">⚔️ Challenge Arena</h2>
+      <p class="page-sub">Pilih modul kuis. Semua kuis bisa diulang — skor terbaik yang disimpan.</p>
+
+      <div class="arena-grid" id="arenaGrid"><!-- diisi JS --></div>
+    </section>
+
+    <!-- ================= LEARNING REPORT ================= -->
+    <section class="page" id="page-report">
+      <h2 class="page-title">📊 Learning Report</h2>
+      <p class="page-sub">Rekap perjalananmu di AI Lab.</p>
+
+      <div class="stat-grid" id="statGrid"><!-- diisi JS --></div>
+
+      <div class="card">
+        <h4>🏅 Status Kelulusan Misi</h4>
+        <div class="check-list" id="checkList"><!-- diisi JS --></div>
+        <div class="verdict" id="verdict"></div>
+      </div>
+
+      <div class="card">
+        <h4>📈 Riwayat Skor Kuis</h4>
+        <div class="table-wrap">
+          <table class="score-table">
+            <thead><tr><th>Modul</th><th>Skor Terbaik</th><th>Status</th></tr></thead>
+            <tbody id="scoreBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>📝 Log Latihan Terakhir</h4>
+        <div id="reportLog" class="log-output"></div>
+      </div>
+
+      <div class="report-actions">
+        <button class="btn btn-primary" id="btnCertificate">Lihat Sertifikat Digital</button>
+        <button class="btn btn-ghost" id="btnExport">Ekspor Progres (.json)</button>
+        <button class="btn btn-danger" id="btnReset2">Reset Progres</button>
+      </div>
+    </section>
+
+    <!-- ================= MENU GURU ================= -->
+    <section class="page" id="page-teacher">
+      <h2 class="page-title">🛠️ Menu Guru</h2>
+      <p class="page-sub">Kelola materi pembelajaran dan soal kuis.</p>
+      <div id="teacherRoot"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== QUIZ MODAL (struktur tetap, tidak pernah ditimpa) ===== -->
+  <div class="overlay" id="quizOverlay">
+    <div class="modal quiz-modal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+      <div class="modal-head">
+        <div>
+          <span class="badge" id="quizBadge">Challenge</span>
+          <h3 id="quizTitle">Kuis</h3>
+        </div>
+        <button class="btn-icon" id="btnCloseQuiz" aria-label="Tutup">✕</button>
+      </div>
+
+      <div class="quiz-progress">
+        <div class="qbar"><div class="qbar-fill" id="qbarFill"></div></div>
+        <span id="qCounter">Soal 1 / 5</span>
+      </div>
+
+      <p class="question" id="questionText"></p>
+      <div class="options" id="optionsBox"></div>
+
+      <div class="feedback" id="feedbackBox" hidden></div>
+
+      <div class="modal-foot">
+        <button class="btn btn-ghost" id="btnQuitQuiz">Keluar</button>
+        <button class="btn btn-primary" id="btnNextQ" disabled>Soal Berikutnya →</button>
+      </div>
+
+      <!-- Panel hasil kuis: tersembunyi, hanya diaktifkan setelah kuis selesai -->
+      <div class="result-panel" id="quizResult" hidden>
+        <div class="big" id="rScore">0</div>
+        <div class="rlabel">Skor kamu (dari 100)</div>
+        <p class="rmsg" id="rMsg"></p>
+        <p class="rsub" id="rSub"></p>
+        <div class="result-actions">
+          <button class="btn btn-ghost" id="btnRetryQ">Ulangi Kuis</button>
+          <button class="btn btn-primary" id="btnFinishQ">Selesai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CERTIFICATE MODAL ===== -->
+  <div class="overlay" id="certOverlay">
+    <div class="modal cert-modal" role="dialog" aria-modal="true">
+      <button class="btn-icon cert-close" id="btnCloseCert" aria-label="Tutup">✕</button>
+      <div class="cert-frame">
+        <p class="cert-preview" id="certPreview" hidden>PRATINJAU · syarat kelulusan belum terpenuhi</p>
+        <p class="cert-missing" id="certMissing" hidden></p>
+        <p class="cert-kicker">SERTIFIKAT DIGITAL</p>
+        <h3 class="cert-title">AI Engineer Muda</h3>
+        <p class="cert-line">Diberikan kepada siswa kelas X SMK yang telah menyelesaikan</p>
+        <p class="cert-course">AI Lab — Misi Menjadi AI Engineer</p>
+        <div class="cert-stats" id="certStats"></div>
+        <p class="cert-date" id="certDate"></p>
+        <p class="cert-sign">Laboratorium Kecerdasan Artifisial</p>
+      </div>
+      <div class="cert-actions">
+        <button class="btn btn-primary" id="btnPrintCert">Cetak / Simpan PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <p>AI Lab · Media Pembelajaran Interaktif · Mata Pelajaran Kecerdasan Artifisial · Kelas X SMK</p>
+    <p class="muted">Berjalan sepenuhnya di perangkatmu. Tanpa server, tanpa biaya.</p>
+  </footer>
+
+  <script src="konten-kustom.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
